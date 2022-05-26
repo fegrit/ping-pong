@@ -1,9 +1,9 @@
-//подключаем необходимые библиотеки
+//ГЇГ®Г¤ГЄГ«ГѕГ·Г ГҐГ¬ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г»ГҐ ГЎГЁГЎГ«ГЁГ®ГІГҐГЄ
 #include <SFML/Graphics.hpp>
 #include <cmath>
 #include <ctime>
 #include <cstdlib>
-//подключаем необходимые пространства имён
+//ГЇГ®Г¤ГЄГ«ГѕГ·Г ГҐГ¬ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г»ГҐ ГЇГ°Г®Г±ГІГ°Г Г­Г±ГІГўГ  ГЁГ¬ВёГ­
 using namespace sf;
 using namespace std;
 
@@ -11,89 +11,89 @@ int main()
 {
 	srand((time(NULL)));
 
-	// определяем необходимые константы
-	const float pi = 3.14159f; // число пи
-	const int gameWidth = 800; // ширина окна
-	const int gameHeight = 600; // высота окна
-	Vector2f paddleSize(25, 100); // размер ракеток
-	float ballRadius = 10.f; //радиус шара
+	// Г®ГЇГ°ГҐГ¤ГҐГ«ГїГҐГ¬ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г»ГҐ ГЄГ®Г­Г±ГІГ Г­ГІГ»
+	const float pi = 3.14159f; // Г·ГЁГ±Г«Г® ГЇГЁ
+	const int gameWidth = 800; // ГёГЁГ°ГЁГ­Г  Г®ГЄГ­Г 
+	const int gameHeight = 600; // ГўГ»Г±Г®ГІГ  Г®ГЄГ­Г 
+	Vector2f paddleSize(25, 100); // Г°Г Г§Г¬ГҐГ° Г°Г ГЄГҐГІГ®ГЄ
+	float ballRadius = 10.f; //Г°Г Г¤ГЁГіГ± ГёГ Г°Г 
 
-	// Создаём окно для игры
+	// Г‘Г®Г§Г¤Г ВёГ¬ Г®ГЄГ­Г® Г¤Г«Гї ГЁГЈГ°Г»
 	RenderWindow window(VideoMode(gameWidth, gameHeight, 32), "Ping-Pong Game",
 		Style::Titlebar | Style::Close);
-	window.setVerticalSyncEnabled(true); // вертикальная синхронизация
+	window.setVerticalSyncEnabled(true); // ГўГҐГ°ГІГЁГЄГ Г«ГјГ­Г Гї Г±ГЁГ­ГµГ°Г®Г­ГЁГ§Г Г¶ГЁГї
 
-	// Создание левой ракетки
-	RectangleShape leftPaddle; // экземлпяр левой ракетки
-	leftPaddle.setSize(paddleSize - Vector2f(3, 3)); // размер
-	leftPaddle.setOutlineThickness(3); // толщина контура
-	leftPaddle.setOutlineColor(Color::Black); // цвет контура
-	leftPaddle.setFillColor(Color(100, 100, 200)); // основной цвет
+	// Г‘Г®Г§Г¤Г Г­ГЁГҐ Г«ГҐГўГ®Г© Г°Г ГЄГҐГІГЄГЁ
+	RectangleShape leftPaddle; // ГЅГЄГ§ГҐГ¬Г«ГЇГїГ° Г«ГҐГўГ®Г© Г°Г ГЄГҐГІГЄГЁ
+	leftPaddle.setSize(paddleSize - Vector2f(3, 3)); // Г°Г Г§Г¬ГҐГ°
+	leftPaddle.setOutlineThickness(3); // ГІГ®Г«Г№ГЁГ­Г  ГЄГ®Г­ГІГіГ°Г 
+	leftPaddle.setOutlineColor(Color::Black); // Г¶ГўГҐГІ ГЄГ®Г­ГІГіГ°Г 
+	leftPaddle.setFillColor(Color(100, 100, 200)); // Г®Г±Г­Г®ГўГ­Г®Г© Г¶ГўГҐГІ
 	leftPaddle.setOrigin(paddleSize / 2.f);
 
-	// Создание правой ракетки
-	RectangleShape rightPaddle; // экземпляр правой ракетки
-	rightPaddle.setSize(paddleSize - Vector2f(3, 3)); // размер
-	rightPaddle.setOutlineThickness(3);  // толщина контура
-	rightPaddle.setOutlineColor(Color::Black); // цвет контура
-	rightPaddle.setFillColor(Color(200, 100, 100)); // основной цвет
+	// Г‘Г®Г§Г¤Г Г­ГЁГҐ ГЇГ°Г ГўГ®Г© Г°Г ГЄГҐГІГЄГЁ
+	RectangleShape rightPaddle; // ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° ГЇГ°Г ГўГ®Г© Г°Г ГЄГҐГІГЄГЁ
+	rightPaddle.setSize(paddleSize - Vector2f(3, 3)); // Г°Г Г§Г¬ГҐГ°
+	rightPaddle.setOutlineThickness(3);  // ГІГ®Г«Г№ГЁГ­Г  ГЄГ®Г­ГІГіГ°Г 
+	rightPaddle.setOutlineColor(Color::Black); // Г¶ГўГҐГІ ГЄГ®Г­ГІГіГ°Г 
+	rightPaddle.setFillColor(Color(200, 100, 100)); // Г®Г±Г­Г®ГўГ­Г®Г© Г¶ГўГҐГІ
 	rightPaddle.setOrigin(paddleSize / 2.f); 
 
-	// Создание мяча
-	CircleShape ball; // экземпляр мяча
-	ball.setRadius(ballRadius - 3); // радиус мяча
-	ball.setOutlineThickness(3); // толщина контура
-	ball.setOutlineColor(Color::Black); // цвет контура
-	ball.setFillColor(Color::Yellow); // основной цвет
-	ball.setOrigin(ballRadius / 2, ballRadius / 2); //координаты
+	// Г‘Г®Г§Г¤Г Г­ГЁГҐ Г¬ГїГ·Г 
+	CircleShape ball; // ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° Г¬ГїГ·Г 
+	ball.setRadius(ballRadius - 3); // Г°Г Г¤ГЁГіГ± Г¬ГїГ·Г 
+	ball.setOutlineThickness(3); // ГІГ®Г«Г№ГЁГ­Г  ГЄГ®Г­ГІГіГ°Г 
+	ball.setOutlineColor(Color::Black); // Г¶ГўГҐГІ ГЄГ®Г­ГІГіГ°Г 
+	ball.setFillColor(Color::Yellow); // Г®Г±Г­Г®ГўГ­Г®Г© Г¶ГўГҐГІ
+	ball.setOrigin(ballRadius / 2, ballRadius / 2); //ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ»
 
-	// Инициализация шрифта в игре
-	Font font; // экземлпяр шрифта
+	// Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї ГёГ°ГЁГґГІГ  Гў ГЁГЈГ°ГҐ
+	Font font; // ГЅГЄГ§ГҐГ¬Г«ГЇГїГ° ГёГ°ГЁГґГІГ 
 	if (!font.loadFromFile("resources/QuicksandBold.ttf")) 
-		return EXIT_FAILURE; // условие для загрузки шрифта
+		return EXIT_FAILURE; // ГіГ±Г«Г®ГўГЁГҐ Г¤Г«Гї Г§Г ГЈГ°ГіГ§ГЄГЁ ГёГ°ГЁГґГІГ 
 
-	// Инициализация привественного окна
-	Text pauseMessage; // экземпляр для текста
-	pauseMessage.setFont(font); // установка шрифта
-	pauseMessage.setCharacterSize(40); // размер шрифта
-	pauseMessage.setPosition(160.f, 230.f); // координаты 
-	pauseMessage.setFillColor(Color::White); // цвет шрифта
-	pauseMessage.setString("This is Ping-Pong Game!\n  Press 'Space' to Start."); // содержимое текста
+	// Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї ГЇГ°ГЁГўГҐГ±ГІГўГҐГ­Г­Г®ГЈГ® Г®ГЄГ­Г 
+	Text pauseMessage; // ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° Г¤Г«Гї ГІГҐГЄГ±ГІГ 
+	pauseMessage.setFont(font); // ГіГ±ГІГ Г­Г®ГўГЄГ  ГёГ°ГЁГґГІГ 
+	pauseMessage.setCharacterSize(40); // Г°Г Г§Г¬ГҐГ° ГёГ°ГЁГґГІГ 
+	pauseMessage.setPosition(160.f, 230.f); // ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ» 
+	pauseMessage.setFillColor(Color::White); // Г¶ГўГҐГІ ГёГ°ГЁГґГІГ 
+	pauseMessage.setString("This is Ping-Pong Game!\n  Press 'Space' to Start."); // Г±Г®Г¤ГҐГ°Г¦ГЁГ¬Г®ГҐ ГІГҐГЄГ±ГІГ 
 
-	// Определение характеристик ракеток
-	Clock AITimer; // экземпляр для измерения времени
-	const Time AITime = seconds(0.1f); // экземпляр для значения времени
-	const float paddleSpeed = 400.f; // скорость ракеток
-	float rightPaddleSpeed = 0.f; // скорость ракетки противника
-	const float ballSpeed = 400.f; // скорость мяча
-	float ballAngle = 0.f; // угол полёта
+	// ГЋГЇГ°ГҐГ¤ГҐГ«ГҐГ­ГЁГҐ ГµГ Г°Г ГЄГІГҐГ°ГЁГ±ГІГЁГЄ Г°Г ГЄГҐГІГ®ГЄ
+	Clock AITimer; // ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° Г¤Г«Гї ГЁГ§Г¬ГҐГ°ГҐГ­ГЁГї ГўГ°ГҐГ¬ГҐГ­ГЁ
+	const Time AITime = seconds(0.1f); // ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° Г¤Г«Гї Г§Г­Г Г·ГҐГ­ГЁГї ГўГ°ГҐГ¬ГҐГ­ГЁ
+	const float paddleSpeed = 400.f; // Г±ГЄГ®Г°Г®Г±ГІГј Г°Г ГЄГҐГІГ®ГЄ
+	float rightPaddleSpeed = 0.f; // Г±ГЄГ®Г°Г®Г±ГІГј Г°Г ГЄГҐГІГЄГЁ ГЇГ°Г®ГІГЁГўГ­ГЁГЄГ 
+	const float ballSpeed = 400.f; // Г±ГЄГ®Г°Г®Г±ГІГј Г¬ГїГ·Г 
+	float ballAngle = 0.f; // ГіГЈГ®Г« ГЇГ®Г«ВёГІГ 
 
 	Clock clock; 
 	bool isPlaying = false; 
-	while (window.isOpen()) // пока открыто окно
+	while (window.isOpen()) // ГЇГ®ГЄГ  Г®ГІГЄГ°Г»ГІГ® Г®ГЄГ­Г®
 	{
-		// Обработка событий 
-		Event event; // экземпляр событий
-		while (window.pollEvent(event)) // события окна
+		// ГЋГЎГ°Г ГЎГ®ГІГЄГ  Г±Г®ГЎГ»ГІГЁГ© 
+		Event event; // ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° Г±Г®ГЎГ»ГІГЁГ©
+		while (window.pollEvent(event)) // Г±Г®ГЎГ»ГІГЁГї Г®ГЄГ­Г 
 		{
-			// события, если окно закрыто или нажата клавиша Esc
+			// Г±Г®ГЎГ»ГІГЁГї, ГҐГ±Г«ГЁ Г®ГЄГ­Г® Г§Г ГЄГ°Г»ГІГ® ГЁГ«ГЁ Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  Esc
 			if ((event.type == Event::Closed) ||
 				((event.type == Event::KeyPressed) && (event.key.code == Keyboard::Escape)))
 			{
-				window.close(); // окно закрывается
+				window.close(); // Г®ГЄГ­Г® Г§Г ГЄГ°Г»ГўГ ГҐГІГ±Гї
 				break; 
 			}
 
-			// события, если нажата клавиша Space(начать игру)
+			// Г±Г®ГЎГ»ГІГЁГї, ГҐГ±Г«ГЁ Г­Г Г¦Г ГІГ  ГЄГ«Г ГўГЁГёГ  Space(Г­Г Г·Г ГІГј ГЁГЈГ°Гі)
 			if ((event.type == Event::KeyPressed) && (event.key.code == Keyboard::Space))
 			{
 				if (!isPlaying)
 				{
-					// начать снова или перезапустить
+					// Г­Г Г·Г ГІГј Г±Г­Г®ГўГ  ГЁГ«ГЁ ГЇГҐГ°ГҐГ§Г ГЇГіГ±ГІГЁГІГј
 					isPlaying = true;
 					clock.restart();
 
-					// сброс позиций ракеток и шара
+					// Г±ГЎГ°Г®Г± ГЇГ®Г§ГЁГ¶ГЁГ© Г°Г ГЄГҐГІГ®ГЄ ГЁ ГёГ Г°Г 
 					leftPaddle.setPosition(10 + paddleSize.x / 2, gameHeight / 2);
 					rightPaddle.setPosition(gameWidth - 10 - paddleSize.x / 2, gameHeight / 2);
 					ball.setPosition(gameWidth / 2, gameHeight / 2);
@@ -105,26 +105,26 @@ int main()
 		{
 			float deltaTime = clock.restart().asSeconds();
 
-			// перемещение нашей ракетки
-			if (Keyboard::isKeyPressed(Keyboard::Up) && // обработка кнопки вверх
+			// ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ Г­Г ГёГҐГ© Г°Г ГЄГҐГІГЄГЁ
+			if (Keyboard::isKeyPressed(Keyboard::Up) && // Г®ГЎГ°Г ГЎГ®ГІГЄГ  ГЄГ­Г®ГЇГЄГЁ ГўГўГҐГ°Гµ
 				(leftPaddle.getPosition().y - paddleSize.y / 2 > 5.f))
 			{
 				leftPaddle.move(0.f, -paddleSpeed * deltaTime);
 			}
-			if (Keyboard::isKeyPressed(Keyboard::Down) && // обработка кнопки вниз
+			if (Keyboard::isKeyPressed(Keyboard::Down) && // Г®ГЎГ°Г ГЎГ®ГІГЄГ  ГЄГ­Г®ГЇГЄГЁ ГўГ­ГЁГ§
 				(leftPaddle.getPosition().y + paddleSize.y / 2 < gameHeight - 5.f))
 			{
 				leftPaddle.move(0.f, paddleSpeed * deltaTime);
 			}
 
-			// перемещение ракетки противника
+			// ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ Г°Г ГЄГҐГІГЄГЁ ГЇГ°Г®ГІГЁГўГ­ГЁГЄГ 
 			if (((rightPaddleSpeed < 0.f) && (rightPaddle.getPosition().y - paddleSize.y / 2 > 5.f)) ||
 				((rightPaddleSpeed > 0.f) && (rightPaddle.getPosition().y + paddleSize.y / 2 < gameHeight - 5.f)))
 			{
 				rightPaddle.move(0.f, rightPaddleSpeed * deltaTime);
 			}
 
-			// перемещение ракетки противника в соотвествии с направлением мяча
+			// ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ Г°Г ГЄГҐГІГЄГЁ ГЇГ°Г®ГІГЁГўГ­ГЁГЄГ  Гў Г±Г®Г®ГІГўГҐГ±ГІГўГЁГЁ Г± Г­Г ГЇГ°Г ГўГ«ГҐГ­ГЁГҐГ¬ Г¬ГїГ·Г 
 			if (AITimer.getElapsedTime() > AITime)
 			{
 				AITimer.restart();
@@ -136,11 +136,11 @@ int main()
 					rightPaddleSpeed = 0.f;
 			}
 
-			// перемещение мяча
+			// ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ Г¬ГїГ·Г 
 			float factor = ballSpeed * deltaTime;
 			ball.move(cos(ballAngle) * factor, sin(ballAngle) * factor);
 
-			// проверка столкновений мяча и экраном
+			// ГЇГ°Г®ГўГҐГ°ГЄГ  Г±ГІГ®Г«ГЄГ­Г®ГўГҐГ­ГЁГ© Г¬ГїГ·Г  ГЁ ГЅГЄГ°Г Г­Г®Г¬
 			if (ball.getPosition().x - ballRadius < 0.f) 
 			{
 				isPlaying = false;
@@ -164,8 +164,8 @@ int main()
 				ball.setPosition(ball.getPosition().x, gameHeight - ballRadius - 0.1f);
 			}
 
-			// проверка столкновений между ракетками и мячом
-			// левая ракетка
+			// ГЇГ°Г®ГўГҐГ°ГЄГ  Г±ГІГ®Г«ГЄГ­Г®ГўГҐГ­ГЁГ© Г¬ГҐГ¦Г¤Гі Г°Г ГЄГҐГІГЄГ Г¬ГЁ ГЁ Г¬ГїГ·Г®Г¬
+			// Г«ГҐГўГ Гї Г°Г ГЄГҐГІГЄГ 
 			if (ball.getPosition().x - ballRadius < leftPaddle.getPosition().x + paddleSize.x / 2 &&
 				ball.getPosition().x - ballRadius > leftPaddle.getPosition().x &&
 				ball.getPosition().y + ballRadius >= leftPaddle.getPosition().y - paddleSize.y / 2 &&
@@ -180,7 +180,7 @@ int main()
 				ball.setPosition(leftPaddle.getPosition().x + ballRadius + paddleSize.x / 2 + 0.1f, ball.getPosition().y);
 			}
 
-			// правая ракетка
+			// ГЇГ°Г ГўГ Гї Г°Г ГЄГҐГІГЄГ 
 			if (ball.getPosition().x + ballRadius > rightPaddle.getPosition().x - paddleSize.x / 2 &&
 				ball.getPosition().x + ballRadius < rightPaddle.getPosition().x &&
 				ball.getPosition().y + ballRadius >= rightPaddle.getPosition().y - paddleSize.y / 2 &&
@@ -196,22 +196,22 @@ int main()
 			}
 		}
 
-		// цвет фона
+		// Г¶ГўГҐГІ ГґГ®Г­Г 
 		window.clear(Color(50, 50, 50));
 
 		if (isPlaying) 
 		{
-			// отображение ракеток и мяча
+			// Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ Г°Г ГЄГҐГІГ®ГЄ ГЁ Г¬ГїГ·Г 
 			window.draw(leftPaddle);
 			window.draw(rightPaddle);
 			window.draw(ball);
 		}
 		else
 		{
-			// отображение окна паузы
+			// Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ Г®ГЄГ­Г  ГЇГ ГіГ§Г»
 			window.draw(pauseMessage);
 		}
-		window.display(); // отображение на экран
+		window.display(); // Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ Г­Г  ГЅГЄГ°Г Г­
 	}
 	return 0;
 }
