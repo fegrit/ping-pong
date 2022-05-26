@@ -14,4 +14,4 @@
 
 # результат
 
-![]https://github.com/fegrit/ping-pong/blob/main/ping-pong.gif
+![](https://github.com/fegrit/ping-pong/blob/main/ping-pong.gif)
